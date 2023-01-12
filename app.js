@@ -107,10 +107,11 @@ Answer.addEventListener('keypress', function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
         checkAnswers();
-        submitAnswer();
+        Answer.value = '';
     }
 })
 
-const submitAnswer = () => {
+submitButton.addEventListener('click', function () {
+    checkAnswers();
     Answer.value = '';
-}
+})
